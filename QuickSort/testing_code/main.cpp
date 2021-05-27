@@ -38,10 +38,10 @@ int partition(int array[], int low, int high) {
   high - Индекс конца */
 void quickSort(int array[], int low, int high) {
     if (low < high) {
-        // Индекс разделяющего элемента, arr[p] отсортирован в правильное место
+        // Индекс разделяющего элемента, элемент array[p] отсортирован в правильное место
         int p = partition(array, low, high);
         /* Рекурсивная сортировка элементов до раздела (опорного элемента)
-         и элементов после него */
+         и элементов после него (по отдельности)*/
         quickSort(array, low, p - 1);
         quickSort(array, p + 1, high);
     }
@@ -55,6 +55,7 @@ void printArray(int array[], int size) {
     printf("\n");
 }
 
+// Программа для тестирования функций
 int main() {
     for (int k = 0; k <= 100; k++) {
         ifstream fin("C:/Users/Матвей/Desktop/QuickSort/tests" + to_string(k + 1) + ".txt");
