@@ -57,7 +57,7 @@ void printArray(int array[], int size) {
 
 int main() {
     for (int k = 0; k <= 100; k++) {
-        ifstream fin("C:/Users/Ìàòâåé/Desktop/QuickSort/tests" + to_string(k + 1) + ".txt");
+        ifstream fin("C:/Users/Матвей/Desktop/QuickSort/tests" + to_string(k + 1) + ".txt");
         int n;
         fin >> n;
         int a[n];
