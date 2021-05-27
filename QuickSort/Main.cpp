@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// Ôóíêöèÿ äëÿ çàìåíû äâóõ ýëåìåíòîâ
+// Функция для замены двух элементов
 void swap(int* a, int* b) {
     int t = *a;
     *a = *b;
@@ -21,30 +21,30 @@ int partition(int array[], int low, int high) {
         /* Если текущий элемент меньше или
         равен опорному */
         if (array[j] <= pivot) {
-            i++;    // Óâåëè÷èâàåì èíäåêñ ìåíüøåãî ýëåìåíòà
-            swap(&array[i], &array[j]); //Âûïîëíÿåì çàìåíó ýëåìåíòîâ
+            i++;    // Увеличиваем индекс меньшего элемента
+            swap(&array[i], &array[j]); //Выполняем замену элементов
         }
     }
     swap(&array[i + 1], &array[high]);
     return (i + 1);
 }
 
-/* Îñíîâíîé ìåòîä, êîòîðûé íàñëåäóåò Quicksort
-  array[] - Ìàññèâ, êîòîðûé íóæíî îòñîðòèðîâàòü,
-  low - Èíäåêñ íà÷àëà,
-  high - Èíäåêñ êîíöà */
+/* Основной метод, который наследует Quicksort
+  array[] - Массив, который нужно отсортировать,
+  low - Индекс начала,
+  high - Индекс конца */
 void quickSort(int array[], int low, int high) {
     if (low < high) {
-        // Èíäåêñ ôóíêöèè ðàçäåëåíèÿ, arr[p]
+        // Индекс функции разделения, arr[p]
         int p = partition(array, low, high);
-        /* Ðåêóðñèâíàÿ ñîðòèðîâêà ýëåìåíòîâ äî ðàçäåëåíèÿ
-         è ýëåìåíòîâ ïîñëå íåãî */
+        /* Рекурсивная сортировка элементов до разделения
+         и элементов после него */
         quickSort(array, low, p - 1);
         quickSort(array, p + 1, high);
     }
 }
 
-// Âûâîä ìàññèâà
+// Вывод массива
 void printArray(int array[], int size) {
     int i;
     for (i = 0; i < size; i++)
@@ -53,16 +53,16 @@ void printArray(int array[], int size) {
 }
 
 int main() {
-    int n; //ðàçìåð ìàññèâà
+    int n; //Размер массива
     cout << "Enter array size:" << endl;
-    cin >> n; //ââîäèì ðàçìåð ìàññèâà
+    cin >> n; //Ввод размера
     int arr[n];
     cout << "Enter array elements:" << endl;
     for (int i = 0; i < n; i++) {
-        cin >> arr[i]; //ââîäèì ýëåìåíò ìàññèâà
+        cin >> arr[i]; //Ввод элемента массива
     }
     cout << "Sorted array:" << endl;
-    quickSort(arr, 0, n - 1); //ïîëó÷àåì îòñîðòèðîâàííûé ìàññèâ
+    quickSort(arr, 0, n - 1); //Получаем отсортированный массив
     printArray(arr, n);
     return 0;
 }
