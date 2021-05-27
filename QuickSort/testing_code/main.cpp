@@ -38,9 +38,9 @@ int partition(int array[], int low, int high) {
   high - Индекс конца */
 void quickSort(int array[], int low, int high) {
     if (low < high) {
-        // Индекс функции разделения, arr[p]
+        // Индекс разделяющего элемента, arr[p] отсортирован в правильное место
         int p = partition(array, low, high);
-        /* Рекурсивная сортировка элементов до разделения
+        /* Рекурсивная сортировка элементов до раздела (опорного элемента)
          и элементов после него */
         quickSort(array, low, p - 1);
         quickSort(array, p + 1, high);
