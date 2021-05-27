@@ -1,0 +1,3 @@
+D:/test(aisd)/MATVEY/testing_code/cmake-build-debug/CMakeFiles/testing_code.dir
+D:/test(aisd)/MATVEY/testing_code/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/test(aisd)/MATVEY/testing_code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
